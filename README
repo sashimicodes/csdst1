@@ -1,0 +1,93 @@
+ASEAN Macroeconomic and Climate Resilience Analysis (2015–2024)
+
+Overview
+
+This repository contains data preparation, merging, and cleaning scripts for analysing macroeconomic indicators alongside climate resilience metrics across **11 Southeast Asian (ASEAN) economies** from **2015 to 2024**.
+
+---
+
+## Data Sources
+
+The analysis integrates two primary datasets:
+
+1. **World Bank World Development Indicators (WDI) (2025 Release):** Provides broad macroeconomic, fiscal, and labor market metrics (e.g., GDP Growth, CPI Inflation, Unemployment Rate, Current Account Balance).
+
+
+2. **IMF-Adapted ND-GAIN Database:** Supplies standardized climate adaptation metrics, including vulnerability scores and IMF-adapted readiness indicators.
+
+
+
+---
+
+## Pipeline Workflow
+
+### 1. Dataset Preparation & Scoping
+
+* **WDI Filtering:** Raw country records are filtered down to 11 Southeast Asian economies using 2-letter ISO codes (`country_id`) and converted to standardized 3-letter ISO3 codes via the `country_converter` library.
+
+
+* **IMF ND-GAIN Formatting:** Climate records are filtered by ISO3 matching, melted from wide format (years 2015–2024) into a long format, and pivoted back into a tidy structure where each indicator forms a separate column per country-year observation.
+
+
+
+### 2. Dataset Integration
+
+* **Inner Join:** The filtered WDI dataset (`wdi_sea`) and tidy climate dataset (`climate_tidy`) are merged on **`ISO3`** and **`year`**.
+
+
+* **Temporal Coverage:** The final merged dataset yields a balanced panel spanning **2015 to 2024** across all 11 countries (110 total observations).
+
+
+
+### 3. Feature Selection & Quality Control
+
+* **Scoped Variables:** Extracts core indicators for macroeconomic and climate vulnerability analysis, including:
+* **Target Variable:** Annual GDP Growth (`GDP Growth (% Annual)`).
+
+
+* **WDI Macro Features:** CPI Inflation, Current Account Balance (% of GDP), and Unemployment Rate.
+
+
+* **IMF Climate Features:** Vulnerability Score and IMF-Adapted Readiness Score.
+
+
+* **Integrity Checks:** Verified zero row duplication and tracked missing value distributions across target and feature variables.
+
+
+---
+
+## Key Country Coverage
+
+The 11 Southeast Asian economies tracked within this pipeline are:
+
+* Brunei Darussalam (`BRN`)
+
+
+* Cambodia (`KHM`)
+
+
+* Indonesia (`IDN`)
+
+
+* Lao PDR (`LAO`)
+
+
+* Malaysia (`MYS`)
+
+
+* Myanmar (`MMR`)
+
+
+* Philippines (`PHL`)
+
+
+* Singapore (`SGP`)
+
+
+* Thailand (`THA`)
+
+
+* Timor-Leste (`TLS`)
+
+
+* Viet Nam (`VNM`)
