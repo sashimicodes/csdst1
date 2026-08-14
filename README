@@ -1,8 +1,8 @@
 ASEAN Macroeconomic and Climate Resilience Analysis (2015–2024)
 
 Overview
-
-This repository contains data preparation, merging, and cleaning scripts for analysing macroeconomic indicators alongside climate resilience metrics across **11 Southeast Asian (ASEAN) economies** from **2015 to 2024**.
+This repository contains the comprehensive data preparation, merging, and cleaning scripts developed for individual task 1 part 1 of the COSC2669 module. 
+The primary objective is to analyse macroeconomic indicators alongside climate resilience metrics across **11 Southeast Asian (ASEAN) economies** from **2015 to 2024**.
 
 ---
 
@@ -12,9 +12,7 @@ The analysis integrates two primary datasets:
 
 1. **World Bank World Development Indicators (WDI) (2025 Release):** Provides broad macroeconomic, fiscal, and labor market metrics (e.g., GDP Growth, CPI Inflation, Unemployment Rate, Current Account Balance).
 
-
 2. **IMF-Adapted ND-GAIN Database:** Supplies standardized climate adaptation metrics, including vulnerability scores and IMF-adapted readiness indicators.
-
 
 
 ---
